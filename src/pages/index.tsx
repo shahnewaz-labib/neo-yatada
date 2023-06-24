@@ -27,6 +27,10 @@ export default function Home() {
     }
   };
 
+  const handleAddTask = () => {
+    console.log("clicked");
+  };
+
   return (
     <>
       <Head>
@@ -35,6 +39,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col items-center justify-center p-10">
+        <div>Add a task:</div>
         <div>Tasks in hand:</div>
 
         <div className="p-2">
@@ -49,6 +54,17 @@ export default function Home() {
               <div>{post.content}</div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-4 flex items-center space-x-2">
+          <input
+            type="text"
+            placeholder="Add a task"
+            className="input-bordered input-primary input input-sm w-full max-w-xs"
+          />
+          <button className="btn-success btn-sm btn" onClick={handleAddTask}>
+            Add
+          </button>
         </div>
       </main>
     </>
